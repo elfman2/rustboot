@@ -1,0 +1,22 @@
+#![no_std]
+#![no_main]
+
+use rt::entry;
+
+entry!(main);
+/// Struct that handles error codes
+#[repr(C)]
+pub enum CodecResponse {
+    Ok = 0,
+    EncodeError = -1,
+    DecodeError = -2,
+}
+pub extern "C" fn encode_environment_data(data: &EnvironmentData) -> CodeResponse {
+    // Encode
+}
+fn main() -> ! {
+    let mut  _x = 42;
+
+    loop {_x+=1;}
+}
+
